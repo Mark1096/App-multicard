@@ -126,12 +126,7 @@ const Card = props => (
   </View>
 );
 
-/*
-  mettendo le parentesi graffe nel metodo showCards() non permette di          visualizzare le Card richieste (capire il motivo, forse perchè è dentro la   classe App?)
-*/ 
-
 export default class App extends React.Component {
-
   showCards = () => 
     elementCards.map((lang, index) => (
       <Card weekDay={lang.weekDay} 
@@ -145,16 +140,6 @@ export default class App extends React.Component {
         key={index} 
       />  
     ));
-  /*
-    <Card weekDay={{weekDay: 'WED'}} 
-        month={{month:'Apr'}}
-        numberDay={{numberDay:'22'}}
-        image={{image:{uri: "https://cdn4.iconfinder.com/data/icons/iconsland-weather/PNG/256x256/Sunny.png"}}}
-        tempMax={{tempMax:'30'}}
-        tempMin={{tempMin:'20'}}
-        tempHumidity={{tempHumidity:'30%'}}
-        prevision={{prevision:"StampoCard"}}  />
-  */
   
   render() {
     return (
@@ -174,26 +159,24 @@ const styles = StyleSheet.create({
   },
   
   screenCard: {
-  //  flex: 1,    in questo caso non si mette, altrimenti concede un altezza ad ogni card tale da farli rientrare tutti nella schermata principale; invece a noi serve che gli elementi si dispongano anche oltre la schermata principale in modo tale da applicare lo scroll
+  /*  flex: 1, -> In questo caso non si mette, altrimenti concede un altezza ad ogni card tale da farli 
+                  rientrare tutti nella schermata principale; invece a noi serve che gli elementi si dispongano anche oltre la
+                  schermata principale in modo tale da applicare lo scroll */  
     height: 130,
     flexDirection: 'row',
     backgroundColor: '#EAEAEA',
     borderTopWidth: 3,
     borderTopColor: 'gray',
-  //  justifyContent:'flex-start',
   },
-
   textLeft: {
     marginTop: 30,
     marginLeft:30,
   },
-
   imageCenter: {
     marginTop: 0,
     marginLeft:30,
     justifyContent: 'center'
   },
-
   finalText: {
     marginTop: 20,
     marginLeft: 30,
